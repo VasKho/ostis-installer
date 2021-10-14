@@ -3,11 +3,13 @@ packages=(
     rocksdb
     glib2
     qt5-base
+    boost
     boost-libs
     make
     cmake
     antlr4
     gcc
+    grunt-cli
     llvm
     curl
     openssl
@@ -16,6 +18,7 @@ packages=(
     nodejs
     npm
     python-pip
+    python-tqdm
 )
 
 for i in "${packages[@]}"

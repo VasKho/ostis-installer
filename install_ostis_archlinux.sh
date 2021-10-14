@@ -57,8 +57,8 @@ stage "Building sc-machine"
 
 cd ./sc-machine
 
-# Add own CMakeList.txt
-mv ${APP_ROOT_PATH}/ostis_installer/CMakeList.txt .
+#Fix Boost.Python location (they are named differently in Arch-based distros)
+sed -i -e 's/python-${PY_SHORT_VERSION}/python${PY_SHORT_VERSION}/' CMakeLists.txt
 
 mkdir build
 cd ./build
@@ -89,5 +89,5 @@ rm ./ims.ostis.kb/ui/ui_start_sc_element.scs
 rm -rf ./kb/menu
 echo "../kb" >> ./repo.path
 echo "../problem-solver" >> ./repo.path
-
-./scripts/build_kb.sh
+cd scripts
+./build_kb.sh

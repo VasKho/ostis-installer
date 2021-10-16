@@ -2,11 +2,9 @@
 
 APP_ROOT_PATH=$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && cd .. && pwd)
 
-red="\e[1;31m"  # Red B
 blue="\e[1;34m" # Blue B
 green="\e[0;32m"
 
-bwhite="\e[47m" # white background
 
 rst="\e[0m"
 
@@ -37,6 +35,9 @@ git clone https://github.com/ostis-dev/ostis-web-platform.git
 cd ./ostis-web-platform
 git checkout 0.6.0
 
+# Fix error with memory allocation in run_scweb.sh
+sed -i '4iexport LD_PRELOAD=/usr/lib/libjemalloc.so.2' ./scripts/run_scweb.sh
+
 
 
 stage "Installing dependencies"
@@ -65,8 +66,10 @@ cd ./build
 cmake ..
 make
 
-cat /bin/config.ini >> ../config/sc-web.ini
-cd ../../
+cd ..
+
+cat ./bin/config.ini >> ../config/sc-web.ini
+cd ..
 
 
 stage "Building sc-web"

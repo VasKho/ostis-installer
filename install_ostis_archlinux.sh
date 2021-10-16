@@ -58,7 +58,7 @@ stage "Building sc-machine"
 cd ./sc-machine
 
 #Fix Boost.Python location (they are named differently in Arch-based distros)
-sed -i -e 's/python-${PY_SHORT_VERSION}/python${PY_SHORT_VERSION}/' CMakeLists.txt
+sed -i -e 's/python-py${PY_SHORT_VERSION}/python${PY_SHORT_VERSION}/' CMakeLists.txt
 
 mkdir build
 cd ./build

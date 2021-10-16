@@ -21,6 +21,6 @@ packages=(
     python-tqdm
 )
 
-printf "%s\n" "${packages[@]}" | sudo pacman -S --needed -
+printf "%s\n" "${packages[@]}" | sudo pacman -Sy --needed -
 
 sudo pip3 install wheel future termcolor tornado sqlalchemy python-rocksdb progress numpy configparser 

@@ -41,7 +41,7 @@ git checkout 0.6.0
 
 stage "Installing dependencies"
 
-${APP_ROOT_PATH}/ostis_installer/install-deps-archlinux.sh
+${APP_ROOT_PATH}/ostis-installer/install-deps-archlinux.sh
 
 
 

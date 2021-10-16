@@ -41,7 +41,7 @@ git checkout 0.6.0
 
 stage "Installing dependencies"
 
-${APP_ROOT_PATH}/ostis_installer/install-deps-archlinux.sh
+${APP_ROOT_PATH}/ostis-installer/install-deps-archlinux.sh
 
 
 
@@ -58,7 +58,7 @@ stage "Building sc-machine"
 cd ./sc-machine
 
 #Fix Boost.Python location (they are named differently in Arch-based distros)
-sed -i -e 's/python-${PY_SHORT_VERSION}/python${PY_SHORT_VERSION}/' CMakeLists.txt
+sed -i -e 's/python-py${PY_SHORT_VERSION}/python${PY_SHORT_VERSION}/' CMakeLists.txt
 
 mkdir build
 cd ./build

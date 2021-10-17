@@ -23,4 +23,4 @@ packages=(
 
 printf "%s\n" "${packages[@]}" | sudo pacman -Sy --needed -
 
-sudo pip3 install wheel future termcolor tornado sqlalchemy tqdm python-rocksdb progress numpy configparser 
+pip3 install wheel future termcolor tornado sqlalchemy tqdm python-rocksdb progress numpy configparser 
